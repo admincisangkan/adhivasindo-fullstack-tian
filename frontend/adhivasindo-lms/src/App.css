@@ -1,0 +1,48 @@
+body
+ {
+    background: var(--ion-background-color);
+    color: var(--ion-text-color);
+    height: 108vh;
+    overflow-y: auto;
+}
+
+/* === Header Style === */
+.header-toolbar {
+  --background: #ffffff;
+  --color: #222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0 10px;
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: 20px;
+  color: #0078ff;
+  text-align: center;
+}
+
+/* === Dashboard Layout === */
+.dashboard-container {
+  padding: 20px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+  text-align: center;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0078ff;
+  margin-top: 10px;
+}

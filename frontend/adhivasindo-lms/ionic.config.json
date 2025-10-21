@@ -1,0 +1,7 @@
+{
+  "name": "adhivasindo-lms",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

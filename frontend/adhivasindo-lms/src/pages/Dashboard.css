@@ -1,0 +1,54 @@
+/* --- Layout utama --- */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px; /* kolom kiri (main area) + kolom kanan (right panel) */
+  height: 100vh;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  background: #f8f8fb;
+}
+
+/* --- Area bawah header: sidebar + main content --- */
+.content-area {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  flex: 1;
+  height: calc(100vh - 70px);
+}
+
+
+/* --- Main Content --- */
+.main-content {
+  background: #fff;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.main-content h1 {
+  margin-top: 0;
+}
+
+
+/* --- Responsif --- */
+@media (max-width: 1024px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .right-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,163 @@
+.right-panel {
+  background: #ffffff;
+  height: 103vh;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  border-left: 1px solid #eee;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === USER INFO === */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.user-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin: 4px 0;
+}
+
+.user-info p {
+  font-size: 13px;
+  color: #777;
+}
+
+/* === CALENDAR SECTION === */
+.calendar-section {
+  width: 100%;
+  background: #2b1b50;
+  color: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.calendar-header h5 {
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.calendar-days {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-days span {
+  background: #fff;
+  color: #2b1b50;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+}
+
+.calendar-days span.active {
+  background: #ffce54;
+  color: #1a1a1a;
+}
+
+.calendar-days span:hover {
+  transform: scale(1.1);
+}
+
+/* === SCHEDULE SECTION === */
+.schedule-section {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.schedule-section h5 {
+  font-size: 14px;
+  color: #111;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  background: #f9f9fb;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+  transform: translateX(4px);
+  background: #f0efff;
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.schedule-info {
+  flex: 1;
+}
+
+.schedule-info .title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  color: #111;
+}
+
+.schedule-info span {
+  font-size: 11px;
+  color: #666;
+}
+
+/* Color Variants */
+.schedule-item.blue .color-dot {
+  background: #6c63ff;
+}
+.schedule-item.coral .color-dot {
+  background: #ff8c7a;
+}
+.schedule-item.yellow .color-dot {
+  background: #ffd66b;
+}
+
+/* === ILLUSTRATION === */
+.illustration {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.illustration img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
