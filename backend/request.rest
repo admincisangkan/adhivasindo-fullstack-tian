@@ -1,0 +1,108 @@
+####Register User
+curl -X POST http://localhost:5000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testusers",
+    "email": "test@examples.com",
+    "password": "password123"
+  }'
+
+
+####Login User
+curl -X POST http://localhost:5000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "test@example.com",
+    "password": "password123"
+  }'
+
+
+####Create Content
+curl -X POST http://localhost:5000/api/content \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0" \
+  -d '{
+    "title": "Second Blog Post",
+    "description": "This is my first blog post description",
+    "body": "This is the full content of my first blog post. It contains detailed information about the topic."
+  }'
+
+
+####List Contents dengan Pagination
+####Get semua content (default: page 1, limit 10)
+curl -X GET "http://localhost:5000/api/content" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+
+####Get content dengan pagination spesifik
+curl -X GET "http://localhost:5000/api/content?page=1&limit=2" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+####Search by keyword "technology"
+curl -X GET "http://localhost:5000/api/content?search=technology" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+####Search by keyword "tips"
+curl -X GET "http://localhost:5000/api/content?search=tips" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+####Search dengan kombinasi pagination
+curl -X GET "http://localhost:5000/api/content?page=1&limit=5&search=post" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+####Get Content by ID
+curl -X GET "http://localhost:5000/api/content/1" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+####Update Content
+curl -X PUT "http://localhost:5000/api/content/1" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0" \
+  -d '{
+    "title": "Updated First Blog Post",
+    "description": "Updated description for my first post",
+    "body": "This is the updated content with new information and improvements."
+  }'
+
+####Delete Content
+curl -X DELETE "http://localhost:5000/api/content/2" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+####Verify Delete dengan Get All
+curl -X GET "http://localhost:5000/api/content" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+####Test dengan token invalid
+curl -X GET "http://localhost:5000/api/content" \
+  -H "Authorization: Bearer inveyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0"
+
+####Test tanpa authorization header
+curl -X GET "http://localhost:5000/api/content"
+
+####Test update content yang bukan milik user
+# Gunakan content ID yang dibuat oleh user lain
+curl -X PUT "http://localhost:5000/api/content/999" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0" \
+  -d '{
+    "title": "Trying to update others content",
+    "body": "This should fail"
+  }'
+
+####Test dengan data invalid
+##### Register tanpa email
+curl -X POST http://localhost:5000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "testuser2",
+    "password": "password123"
+  }'
+
+##### Create content tanpa title
+curl -X POST http://localhost:5000/api/content \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYwODYxNzU3LCJleHAiOjE3NjA5NDgxNTd9.eysRKEpj48ZAD_4AZrxXnI0fO9SQF-SfpJrnzZVKCm0" \
+  -d '{
+    "description": "No title provided",
+    "body": "This should fail validation"
+  }'
